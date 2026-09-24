@@ -1,34 +1,24 @@
-const biler = [
-  {
-    pris: 2300,
-    model: "Turbo",
-    brand: "Lada",
-    farve: "beige",
-    udstyr: ["rat", "sæder", "vinduer"],
-  },
-  {
-    pris: 2300000,
-    model: "Super",
-    brand: "BMW",
-    farve: "Sort",
-    udstyr: ["rat", "sæder", "vinduer", "fart"],
-  },
-];
-
-console.log(biler);
-/* console.log(bil2); */
-
+const endpoint = "https://kea-alt-del.dk/t7/api/products";
 const produktliste = document.querySelector(".produktliste");
 
-biler.forEach(visBiler);
+fetch(endpoint)
+  .then((res) => res.json())
+  .then(visData);
 
-function visBiler(bil) {
-  produktliste.innerHTML += `
-  <article class="card">
-      <h2>${bil.brand}</h2>
-      <h3>${bil.model}</h3>
-      <p>${bil.pris}</p>
-      <p>${bil.udstyr}</p>
+function visData(json) {
+  console.log(json);
+  json.forEach((element) => {
+    produktliste.innerHTML += `
+      <a class="link" href="productdetails.html?id=${element.id}">
+      <article class="card">
+      <img src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp" alt="produktbillede">
+
+      <h2>${element.productdisplayname}</h2>
+      <h3>${element.articletype}</h3>
+      <p>${element.category}</p>
+      <p>${element.price}</p>
     </article>
+    </a>
     `;
+  });
 }
