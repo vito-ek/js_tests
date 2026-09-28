@@ -37,12 +37,23 @@ nav {
 }
 
 article {
+  position: relative;
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 4;
   background-color: #f9f6f5;
   color: #402d2d;
   padding: 1rem;
+}
+
+.tilbudlabel {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  padding: 1rem;
+  background-color: yellow;
+  color: black;
+  /*  rotate: -10deg; */
 }
 
 .card {
