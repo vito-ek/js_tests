@@ -25,7 +25,6 @@ function visData(json) {
         <p>Før Kr. ${element.price},- Nu ${tilbudspris},-</p>`
           : `<p>Kr. ${element.price},-</p>`
       }
-     
     
       <p>${element.category}</p>
     </article>
