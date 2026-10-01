@@ -1,11 +1,19 @@
 main {
   padding: 0 110px;
   padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 
 h1 {
-  color: #402d2d;
-  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 header {
@@ -35,16 +43,21 @@ nav a {
 .menu a {
   padding: 10px 20px;
   border: none;
-  background-color: #402d2d;
+  background-color: black;
   color: #f9f6f5;
   border-radius: 1px;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .menu a:hover {
   background-color: #d1cecd;
   color: #402d2d;
+}
+
+button {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #filter {
@@ -58,13 +71,37 @@ nav a {
 #filter button {
   padding: 10px 20px;
   border: none;
-  background-color: #402d2d;
+  background-color: black;
   color: #f9f6f5;
   border-radius: 3px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 #filter button:hover {
+  background-color: #d1cecd;
+  color: inherit;
+}
+
+#sortering {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#sortering button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #f9f6f5;
+  color: #402d2d;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#sortering button:hover {
   background-color: #d1cecd;
   color: #402d2d;
 }
@@ -75,14 +112,21 @@ nav a {
   gap: 1rem;
 }
 
-article {
+.card {
   position: relative;
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 4;
+  grid-row: span 5;
+  gap: 1rem;
   background-color: #f9f6f5;
-  color: #402d2d;
+  color: black;
   padding: 1rem;
+  border-radius: 5px;
+}
+
+.card h2 {
+  margin: 0;
+  min-height: 2.4em;
 }
 
 .tilbudlabel {
@@ -92,18 +136,6 @@ article {
   padding: 1rem;
   background-color: yellow;
   color: black;
-  /*  rotate: -10deg; */
-}
-
-.card {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 5;
-  gap: 1rem;
-  background-color: #f9f6f5;
-  color: #402d2d;
-  padding: 1rem;
-  border-radius: 5px;
 }
 
 img {
@@ -137,7 +169,15 @@ img {
     text-decoration: none;
     color: black;
     text-align: center;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: larger;
+    transition: 0.3s ease;
   }
+}
+
+#catListeContainer a:hover {
+  background-color: #d1cecd;
+  color: black;
 }
 
 .udsolgt {
@@ -150,11 +190,12 @@ img {
 }
 
 .soldout-label {
+  position: absolute;
   top: 20px;
   left: 20px;
   background-color: black;
   color: white;
-  padding: 5px 10px;
+  padding: 5px 100px;
   font-size: 15px;
   font-weight: bold;
 }

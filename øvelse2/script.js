@@ -41,24 +41,44 @@ document.querySelectorAll("#filter button").forEach((knap) => {
 });
 
 let allData;
+let udsnit;
 
 function getData() {
   fetch(endpoint)
     .then((response) => response.json())
     .then((data) => {
       allData = data;
+      udsnit = allData;
       visData(allData);
     });
 }
 
 function filter(e) {
   const valgt = e.target.textContent;
+
   if (valgt == "All") {
-    visData(allData);
+    udsnit = allData;
   } else {
-    const udsnit = allData.filter((element) => element.gender == valgt);
-    visData(udsnit);
+    udsnit = allData.filter((element) => element.gender == valgt);
   }
+
+  visData(udsnit);
 }
 
 getData();
+
+document.querySelectorAll("#sortering button").forEach((button) => button.addEventListener("click", sorter));
+
+function sorter(e) {
+  const valgt = e.target.textContent;
+  if (valgt == "Pris lav-høj") {
+    udsnit.sort((a, b) => a.price - b.price);
+  } else if (valgt == "Pris høj-lav") {
+    udsnit.sort((a, b) => b.price - a.price);
+  } else if (valgt == "A-Z") {
+    udsnit.sort((a, b) => a.productdisplayname.localeCompare(b.productdisplayname));
+  } else if (valgt == "Z-A") {
+    udsnit.sort((a, b) => b.productdisplayname.localeCompare(a.productdisplayname));
+  }
+  visData(udsnit);
+}
