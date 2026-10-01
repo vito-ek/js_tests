@@ -29,7 +29,7 @@ header h1 {
   grid-column: 2;
 }
 nav a {
-  color: #402d2d;
+  color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -80,7 +80,7 @@ button {
 
 #filter button:hover {
   background-color: #d1cecd;
-  color: inherit;
+  color: black;
 }
 
 #sortering {
@@ -95,7 +95,7 @@ button {
   padding: 5px 10px;
   border: none;
   background-color: #f9f6f5;
-  color: #402d2d;
+  color: black;
   border-radius: 3px;
   cursor: pointer;
   transition: 0.3s ease;
@@ -103,7 +103,26 @@ button {
 
 #sortering button:hover {
   background-color: #d1cecd;
-  color: #402d2d;
+  color: black;
+}
+
+#product {
+  padding-top: 2rem;
+}
+
+#backbutton {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: #f9f6f5;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#backbutton:hover {
+  background-color: #d1cecd;
+  color: black;
 }
 
 .produktliste {
@@ -152,7 +171,7 @@ img {
   background-color: #f9f6f5;
   padding: 1rem;
   border-radius: 5px;
-  color: #402d2d;
+  color: black;
 }
 .product-info {
   display: flex;
